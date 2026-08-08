@@ -22,3 +22,5 @@ que no pueda ser público.
 
 **Automático**: cada push a `main` dispara un build en Cloudflare Pages y publica.
 El proyecto es `vistto-landing-git`, conectado al repo por git.
+
+<!-- auto-deploy verificado -->

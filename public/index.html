@@ -9,7 +9,7 @@
 <meta property="og:description" content="Bisutería fina y accesorios de moda. Piezas de acero inoxidable con baño de oro, resistentes al agua.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vistto.store">
-<meta name="theme-color" content="#4A443C">
+<meta name="theme-color" content="#F4EFE6">
 <link rel="canonical" href="https://vistto.store">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.svg">
@@ -22,13 +22,19 @@
   --crema:#F4EFE6; --arena:#D8C7B4; --camel:#B8926A; --cacao:#6B4F3A;
   --nogal:#4A443C; --salvia:#7A8B6F; --oro:#C9A86A; --piedra:#E7DFD3;
   --taupe:#8C8073; --marfil:#FBF9F5;
+  /* — Tema: Crema hueso — */
+  --fondo:#F4EFE6; --texto:#3A332B; --texto-2:#5A5147;
+  --acento:#A98545; --tagline:#8C6F4A; --taupe-txt:#7B7266;
+  --halo:rgba(169,133,69,.10); --borde:rgba(107,79,58,.24);
+  --borde-sello:rgba(169,133,69,.35); --hover:rgba(169,133,69,.08);
+  --pie:#9A9084;
   --serif:'Cormorant Garamond', Georgia, serif;
   --sans:'Jost', system-ui, -apple-system, sans-serif;
 }
 *{box-sizing:border-box;}
 html{color-scheme:light;}
 body{
-  margin:0; min-height:100svh; background:var(--nogal); color:var(--crema);
+  margin:0; min-height:100svh; background:var(--fondo); color:var(--texto);
   font-family:var(--sans); font-weight:300; -webkit-font-smoothing:antialiased;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   padding:clamp(2rem,7vw,5rem) 1.5rem; text-align:center; line-height:1.6;
@@ -38,7 +44,7 @@ body{
 body::before{
   content:''; position:absolute; top:38%; left:50%; translate:-50% -50%;
   width:min(720px,120vw); aspect-ratio:1; pointer-events:none;
-  background:radial-gradient(circle, rgba(201,168,106,.13) 0%, transparent 62%);
+  background:radial-gradient(circle, var(--halo) 0%, transparent 62%);
 }
 main{position:relative; max-width:600px; width:100%;
   animation:entrar 1.1s cubic-bezier(.2,.7,.3,1) both;}
@@ -53,50 +59,62 @@ h1{
 }
 .tagline{
   font-family:var(--serif); font-style:italic; font-weight:300;
-  font-size:clamp(1.25rem,4vw,1.7rem); color:var(--arena);
+  font-size:clamp(1.25rem,4vw,1.7rem); color:var(--tagline);
   margin:1.1rem 0 0; letter-spacing:.01em;
 }
 .regla{
-  width:44px; height:1px; background:var(--oro); opacity:.6;
+  width:44px; height:1px; background:var(--acento); opacity:.6;
   margin:2.6rem auto;
 }
 .claim{
-  margin:0 auto; max-width:34rem; color:var(--piedra);
+  margin:0 auto; max-width:34rem; color:var(--texto-2);
   font-size:clamp(.95rem,2.6vw,1.05rem);
 }
-.claim b{font-weight:400; color:var(--crema);}
+.claim b{font-weight:400; color:var(--texto);}
+
+/* Alianza con Kipy: se anuncia, no se grita. Un sello y una línea. */
+.aliado{
+  margin:2.4rem auto 0; max-width:30rem;
+  display:flex; flex-direction:column; align-items:center; gap:.55rem;
+  font-size:.88rem; color:var(--taupe-txt);
+}
+.sello{
+  font-size:.62rem; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--acento); border:1px solid var(--borde-sello);
+  padding:.34rem .85rem; border-radius:999px;
+}
 
 .canales{
   display:flex; flex-wrap:wrap; gap:.9rem; justify-content:center;
-  margin-top:2.8rem;
+  margin-top:2.4rem;
 }
 .canal{
   display:inline-flex; align-items:center; gap:.6rem;
-  padding:.72rem 1.35rem; border:1px solid rgba(216,199,180,.32); border-radius:999px;
-  color:var(--crema); text-decoration:none; font-size:.94rem; letter-spacing:.02em;
+  padding:.72rem 1.35rem; border:1px solid var(--borde); border-radius:999px;
+  color:var(--texto); text-decoration:none; font-size:.94rem; letter-spacing:.02em;
   transition:border-color .25s ease, background-color .25s ease, color .25s ease;
 }
 .canal:hover,.canal:focus-visible{
-  border-color:var(--oro); background:rgba(201,168,106,.1); color:#fff;
+  border-color:var(--acento); background:var(--hover); color:var(--texto);
 }
 .canal svg{width:17px; height:17px; flex:none;}
-.canal:focus-visible{outline:2px solid var(--oro); outline-offset:3px;}
+.canal:focus-visible{outline:2px solid var(--acento); outline-offset:3px;}
 
 footer{
   position:relative; margin-top:clamp(3.5rem,9vw,6rem);
-  font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--taupe);
+  font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--pie);
 }
-footer a{color:var(--taupe); text-decoration:none; border-bottom:1px solid transparent;}
-footer a:hover{color:var(--arena); border-bottom-color:var(--arena);}
-footer .dominio{color:var(--arena);}
+footer a{color:var(--pie); text-decoration:none; border-bottom:1px solid transparent;}
+footer a:hover{color:var(--tagline); border-bottom-color:var(--arena);}
+footer .dominio{color:var(--tagline);}
 footer .sep{opacity:.5; margin:0 .15rem;}
 </style>
 </head>
 <body>
 
   <main>
-    <svg class="iso" viewBox="0 0 100 100" role="img" aria-label="Isotipo de vistto">
-      <g fill="none" stroke="#C9A86A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <svg class="iso" style="color:var(--acento)" viewBox="0 0 100 100" role="img" aria-label="Isotipo de vistto">
+      <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M41 24 L41 74"/>
         <path d="M59 24 L59 68 Q59 78 68 77"/>
         <path d="M27 40 L73 40"/>
@@ -112,6 +130,11 @@ footer .sep{opacity:.5; margin:0 .15rem;}
       Bisutería fina y accesorios pensados para usarse todos los días.
       <b>Acero inoxidable con baño de oro</b>, resistente al agua y al deslustre:
       piezas que no se cambian de color a la semana.
+    </p>
+
+    <p class="aliado">
+      <span class="sello">Aliados de Kipy</span>
+      Pronto podrás sumar y canjear tus puntos Kipy en cada compra.
     </p>
 
     <div class="canales">

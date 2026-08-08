@@ -13,6 +13,12 @@ Las tipografías van empotradas en el HTML, así que no depende de ningún CDN.
 public/index.html   lo único que se publica
 ```
 
-Sólo se despliega `public/`. Nota: en Cloudflare Pages los archivos servidos una
-vez quedan accesibles aunque un deploy posterior los excluya, así que fuera de
-`public/` no debe ponerse nada que no pueda ser público.
+Sólo se despliega `public/` (configurado como *root directory* del proyecto).
+Nota: en Cloudflare Pages los archivos servidos una vez quedan accesibles aunque
+un deploy posterior los excluya, así que fuera de `public/` no debe ponerse nada
+que no pueda ser público.
+
+## Deploy
+
+**Automático**: cada push a `main` dispara un build en Cloudflare Pages y publica.
+El proyecto es `vistto-landing-git`, conectado al repo por git.
